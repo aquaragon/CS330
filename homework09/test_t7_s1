@@ -1,0 +1,105 @@
+Unit Test for baseline RBT implementation
+Input: 
+83 86 77 15 93 35 86 
+Sorted input: 
+15 35 77 83 86 86 93 
+
+Insert test: 
+===== inserting 83 =====
+83 Black
+========================
+===== inserting 86 =====
+83 Black
+86 Red
+========================
+===== inserting 77 =====
+77 Red
+83 Black
+86 Red
+========================
+===== inserting 15 =====
+15 Red
+77 Black
+83 Black
+86 Black
+========================
+===== inserting 93 =====
+15 Red
+77 Black
+83 Black
+86 Black
+93 Red
+========================
+===== inserting 35 =====
+15 Red
+35 Black
+77 Red
+83 Black
+86 Black
+93 Red
+========================
+===== inserting 86 =====
+15 Red
+35 Black
+77 Red
+83 Black
+86 Red
+86 Black
+93 Red
+========================
+
+Min/max test: 
+----------
+RBT min: 15 Red
+RBT max: 93 Red
+----------
+
+BST walk test: 
+----------
+15 Red
+35 Black
+77 Red
+83 Black
+86 Red
+86 Black
+93 Red
+----------
+
+----------
+Predecessor/Successor test: 
+83 Black pred: 77 succ: 86
+86 Red pred: 83 succ: 86
+77 Red pred: 35 succ: 83
+15 Red pred: none succ: 35
+93 Red pred: 86 succ: none
+35 Black pred: 15 succ: 77
+86 Black pred: 86 succ: 93
+----------
+
+----------
+tree_search() with fake keys: 
+84 was not found
+87 was not found
+78 was not found
+16 was not found
+94 was not found
+36 was not found
+87 was not found
+----------
+
+tree_search() and delete_node()
+---- deleting 83 -----
+15 Red
+35 Black
+77 Red
+86 Black
+86 Black
+93 Red
+---- deleting 86 -----
+86 Black
+15 Red
+35 Black
+77 Red
+86 Black
+93 Black
+----------

@@ -1,0 +1,232 @@
+Unit Test for baseline RBT implementation
+Input: 
+83 86 77 15 93 35 86 92 49 21 62 27 
+Sorted input: 
+15 21 27 35 49 62 77 83 86 86 92 93 
+
+Insert test: 
+===== inserting 83 =====
+83 Black
+========================
+===== inserting 86 =====
+83 Black
+86 Red
+========================
+===== inserting 77 =====
+77 Red
+83 Black
+86 Red
+========================
+===== inserting 15 =====
+15 Red
+77 Black
+83 Black
+86 Black
+========================
+===== inserting 93 =====
+15 Red
+77 Black
+83 Black
+86 Black
+93 Red
+========================
+===== inserting 35 =====
+15 Red
+35 Black
+77 Red
+83 Black
+86 Black
+93 Red
+========================
+===== inserting 86 =====
+15 Red
+35 Black
+77 Red
+83 Black
+86 Red
+86 Black
+93 Red
+========================
+===== inserting 92 =====
+15 Red
+35 Black
+77 Red
+83 Black
+86 Black
+86 Red
+92 Red
+93 Black
+========================
+===== inserting 49 =====
+15 Black
+35 Red
+49 Red
+77 Black
+83 Black
+86 Black
+86 Red
+92 Red
+93 Black
+========================
+===== inserting 21 =====
+15 Black
+21 Red
+35 Red
+49 Red
+77 Black
+83 Black
+86 Black
+86 Red
+92 Red
+93 Black
+========================
+===== inserting 62 =====
+15 Black
+21 Red
+35 Red
+49 Red
+62 Black
+77 Red
+83 Black
+86 Black
+86 Red
+92 Red
+93 Black
+========================
+===== inserting 27 =====
+15 Red
+21 Black
+27 Red
+35 Red
+49 Red
+62 Black
+77 Red
+83 Black
+86 Black
+86 Red
+92 Red
+93 Black
+========================
+
+Min/max test: 
+----------
+RBT min: 15 Red
+RBT max: 93 Black
+----------
+
+BST walk test: 
+----------
+15 Red
+21 Black
+27 Red
+35 Red
+49 Red
+62 Black
+77 Red
+83 Black
+86 Black
+86 Red
+92 Red
+93 Black
+----------
+
+----------
+Predecessor/Successor test: 
+83 Black pred: 77 succ: 86
+86 Black pred: 83 succ: 86
+77 Red pred: 62 succ: 83
+15 Red pred: none succ: 21
+93 Black pred: 92 succ: none
+35 Red pred: 27 succ: 49
+86 Red pred: 86 succ: 92
+92 Red pred: 86 succ: 93
+49 Red pred: 35 succ: 62
+21 Black pred: 15 succ: 27
+62 Black pred: 49 succ: 77
+27 Red pred: 21 succ: 35
+----------
+
+----------
+tree_search() with fake keys: 
+84 was not found
+87 was not found
+78 was not found
+16 was not found
+94 was not found
+36 was not found
+87 was not found
+Found 93
+50 was not found
+22 was not found
+63 was not found
+28 was not found
+----------
+
+tree_search() and delete_node()
+---- deleting 83 -----
+86 Red
+15 Red
+21 Black
+27 Red
+35 Red
+49 Red
+62 Black
+77 Red
+86 Black
+86 Black
+92 Red
+93 Black
+---- deleting 86 -----
+92 Red
+15 Red
+21 Black
+27 Red
+35 Red
+49 Red
+62 Black
+77 Red
+86 Black
+92 Black
+93 Red
+---- deleting 77 -----
+15 Red
+21 Black
+27 Red
+35 Red
+49 Red
+62 Black
+86 Black
+92 Black
+93 Red
+---- deleting 15 -----
+21 Black
+27 Red
+35 Red
+49 Red
+62 Black
+86 Black
+92 Black
+93 Red
+---- deleting 93 -----
+21 Black
+27 Red
+35 Red
+49 Red
+62 Black
+86 Black
+92 Black
+---- deleting 35 -----
+21 Black
+27 Red
+49 Red
+62 Black
+86 Black
+92 Black
+---- deleting 86 -----
+92 Black
+21 Black
+27 Red
+49 Black
+62 Red
+92 Black
+----------
